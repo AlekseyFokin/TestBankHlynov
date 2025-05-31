@@ -1,0 +1,100 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TestBankHlynov" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.TestBankHlynov" parent="Base.Theme.TestBankHlynov" />
+
+<!--    <style name="Fragmentstyle">-->
+<!--        <item name="android:background">@color/white</item>-->
+
+<!--&lt;!&ndash;        <item name="android:paddingTop">@dimen/padding_large_top</item>&ndash;&gt;-->
+
+<!--    </style>-->
+<!--    <item name="android:paddingStart">@dimen/padding_large_36</item>-->
+<!--    <item name="android:paddingEnd">@dimen/padding_large_36</item>-->
+<!--    <item name="android:paddingBottom">@dimen/padding_large_bottom</item>-->
+
+    <!--    Текст заголовков -->
+    <style name="Header_Roboto_700_29">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">29sp</item>
+        <item name="android:lineHeight">29dp</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    Текст описаний -->
+    <style name="Description_Roboto_400_19">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">19dp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">@color/description_text</item>
+    </style>
+
+    <!--    Текст кнопок -->
+    <style name="Button_Roboto_400_16">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">@color/button_label_text</item>
+    </style>
+
+    <!--    Текст строки запроса -->
+    <style name="Searchtext_Roboto_300_12">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textFontWeight">300</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    Текст кнопки назад -->
+    <style name="Backtext_Roboto_400_16">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    Текст заголовка артиста  -->
+    <style name="Artist_Header_Roboto_700_26">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    Текст кнопки назад -->
+    <style name="Artist_text_Roboto_400_16">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+<!--    <item name="android:textSize">16sp</item>-->
+<!--    <item name="android:lineHeight">29dp</item>-->
+
+    <!--Кнопка с градиентом 1-->
+    <style name="ButtonStyle1" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/button1_shape_with_ripple</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAppearance">@style/Button_Roboto_400_16</item>
+        <item name="android:paddingTop">@dimen/padding_medium</item>
+        <item name="android:paddingBottom">@dimen/padding_medium</item>
+
+        <item name="android:lineSpacingExtra">19dp</item>
+    </style>
+<!--    <item name="android:lineHeight">@dimen/button_line_height</item>-->
+
+    <!--Кнопка с градиентом 2-->
+    <style name="ButtonStyle2" parent="ButtonStyle1">
+        <item name="android:background">@drawable/button2_shape_with_ripple</item>
+    </style>
+
+
+
+</resources>

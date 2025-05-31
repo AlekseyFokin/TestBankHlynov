@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:id="@+id/spacer"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginStart="@dimen/padding_large_36"
+    android:layout_marginEnd="@dimen/padding_large_36"
+    android:background="@drawable/gradient_1"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

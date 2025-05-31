@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Отступы padding-->
+    <dimen name="padding_medium">13dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_large_36">32dp</dimen>
+    <dimen name="padding_large_bottom">86dp</dimen>
+
+    <!-- Внешние отступы (margin) -->
+    <dimen name="margin_large_36">32dp</dimen>
+    <dimen name="margin_large_top">46dp</dimen>
+    <dimen name="margin_large_bottom">57dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">25dp</dimen>
+
+<!--    <dimen name="margin_large_bottom">86dp</dimen>-->
+    <dimen name="margin_small_top">7dp</dimen>
+    <dimen name="margin_medium_bottom">21dp</dimen>
+
+    <!-- Спейсер с градиентом>-->
+    <dimen name="spacer_margin">21dp</dimen>
+
+    <!-- Баннер-->
+    <dimen name="banner_height">355dp</dimen>
+
+    <!--Кнопки-->
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="button_line_height">29dp</dimen>
+
+    <dimen name = "search_string_height">25dp</dimen>
+    <dimen name = "search_string_margin">25dp</dimen>
+    <dimen name = "search_button_width">156dp</dimen>
+
+    <dimen name = "back_button_height">29dp</dimen>
+
+
+
+</resources>

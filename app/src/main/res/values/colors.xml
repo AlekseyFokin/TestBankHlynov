@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="gradient1_start">#FBC2EB</color>
+    <color name="gradient1_end">#A6C1EE</color>
+    <color name="gradient2_start">#F093FB</color>
+    <color name="gradient2_end">#F5576C</color>
+    <color name="description_text">#7B7B7B</color>
+    <color name="button_label_text">#303030</color>
+
+
+    <color name="color_pressed">#787272</color>
+</resources>

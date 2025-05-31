@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">TestBankHlynov</string>
+
+<!--    MainFragment-->
+    <string name="main_label">Поиск музыкальных исполнителей</string>
+    <string name="description_label">Сервис позволяет найти лучшие треки исполнителей и показывает биографию.</string>
+    <string name="content_description_main_image">основной баннер</string>
+    <string name="biography_artist_button_label">Биография артиста</string>
+    <string name="best_tracks_button_label">Лучшие треки</string>
+
+    <!--BiographyFragment-->
+    <string name="bgph_search_header">Биография</string>
+    <string name="bgph_search_placeholder_label">Кого ищем?</string>
+    <string name="bgph_search_button_label">Искать</string>
+    <string name="content_description_artist_image">Фото артиста</string>
+    <string name="bgph_back_button_label"><u>Вернуться назад</u></string>
+
+
+    <!--BastTrackFragment-->
+    <string name="bsttr_search_header">Лучшие треки</string>
+    <string name="bsttr_search_placeholder_label">Кого ищем?</string>
+    <string name="bsttr_search_button_label">Искать</string>
+    <string name="bsttr_back_button_label">Вернуться назад</string>
+
+
+</resources>
