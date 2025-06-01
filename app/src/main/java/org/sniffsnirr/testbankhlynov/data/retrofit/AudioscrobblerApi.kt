@@ -15,7 +15,7 @@ interface AudioscrobblerApi {
         @Query("artist") artist: String,
         @Query("api_key") apiKey: String = "YOUR_API_KEY",
         @Query("format") format: String = "json"
-    ): Response<RootResponseArtistBiography>
+    ): RootResponseArtistBiography
 
     companion object{
            const val API_KEY = "98d047242117728d0875463cb3d36e41"

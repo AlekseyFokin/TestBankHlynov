@@ -1,7 +1,46 @@
 package org.sniffsnirr.testbankhlynov.presentation.ui
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.launch
+import org.sniffsnirr.testbankhlynov.domain.entity.ArtistBiography
+import org.sniffsnirr.testbankhlynov.domain.usecase.GetArtistBiographyInfoUseCase
+import javax.inject.Inject
 
-class BiographyViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+@HiltViewModel
+class BiographyViewModel @Inject constructor(private val getArtistBiographyInfoUseCase: GetArtistBiographyInfoUseCase) :
+    ViewModel() {
+
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading = _isLoading.asStateFlow()
+
+    private val _error = Channel<String>() // для передачи ошибки соединения с сервисом поиска
+    val error = _error.receiveAsFlow()
+
+    private val _artistBiographyInfo = MutableStateFlow<ArtistBiography?>(null)
+    val artistBiographyInfo = _artistBiographyInfo.asStateFlow()
+
+    fun getArtistBoigraphy(artistName:String) {
+        viewModelScope.launch(Dispatchers.IO) {// Запуск загрузки всего контента
+            kotlin.runCatching {
+                _isLoading.value = true
+                getArtistBiographyInfoUseCase(artistName)
+            }.fold(
+                onSuccess = { _artistBiographyInfo.value = it },
+                onFailure = { Log.d("Error", "Загрузка биографии : ${it.message}")
+                    _isLoading.value = false
+                    _error.send(it.message?:"")  // показывать диалог с ошибкой - где onFailure
+                }
+            )
+            _isLoading.value = false
+        }
+
+    }
 }

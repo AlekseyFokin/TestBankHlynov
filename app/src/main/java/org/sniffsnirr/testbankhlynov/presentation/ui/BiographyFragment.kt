@@ -6,10 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import kotlinx.coroutines.launch
 import org.sniffsnirr.testbankhlynov.R
 import org.sniffsnirr.testbankhlynov.databinding.FragmentBiographyBinding
-import org.sniffsnirr.testbankhlynov.databinding.FragmentMainBinding
 
 class BiographyFragment : Fragment() {
     private var _binding: FragmentBiographyBinding? = null
@@ -37,7 +41,43 @@ class BiographyFragment : Fragment() {
             backButton.setOnClickListener {
                 findNavController().popBackStack(R.id.mainFragment, false)
             }
+
+
+            biographySearchButton.setOnClickListener {
+                if (!searchText.text.isNullOrBlank()) {
+                    viewModel.getArtistBoigraphy(searchText.text.toString())
+                }
+            }
         }
+
+        viewLifecycleOwner.lifecycleScope.launch {// загрузка всего контента для HomeFragment
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.artistBiographyInfo.collect {
+                    with(binding) {
+                        artistHeader.text = it?.name
+                        artistText.text = it?.summary
+                        super.onViewCreated(view, savedInstanceState)
+                        Glide
+                            .with(photo.context)
+                            .load(it?.imageUrl)
+                            .into(photo)
+                    }
+                }
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {// прогрессбар загрузки
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.isLoading.collect {
+                    if (it) {
+                        binding.progressbar.visibility = View.VISIBLE
+                    } else {
+                        binding.progressbar.visibility = View.GONE
+                    }
+                }
+            }
+        }
+
     }
 
     override fun onDestroy() {
