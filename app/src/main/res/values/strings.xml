@@ -20,7 +20,8 @@
     <string name="bsttr_search_header">Лучшие треки</string>
     <string name="bsttr_search_placeholder_label">Кого ищем?</string>
     <string name="bsttr_search_button_label">Искать</string>
-    <string name="bsttr_back_button_label">Вернуться назад</string>
+    <string name="bsttr_back_button_label"><u>Вернуться назад</u></string>
+    <string name="bsttr_item_image_content_description">название трека</string>
 
 
 </resources>

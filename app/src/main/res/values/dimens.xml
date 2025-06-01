@@ -8,7 +8,7 @@
 
     <!-- Внешние отступы (margin) -->
     <dimen name="margin_large_36">32dp</dimen>
-    <dimen name="margin_large_top">46dp</dimen>
+    <dimen name="margin_large_top">71dp</dimen>
     <dimen name="margin_large_bottom">57dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">25dp</dimen>
@@ -33,6 +33,8 @@
 
     <dimen name = "back_button_height">29dp</dimen>
 
+    <dimen name = "track_rv_item_image_size">80dp</dimen>
+    <dimen name = "track_rv_item_margin">24dp</dimen>
 
 
 </resources>

@@ -26,6 +26,8 @@ pagingLibVers="3.3.6"
 lifecycleLivedataKtx = "2.9.0"
 legacySupportV4 = "1.0.0"
 #lifecycleProcess = "2.8.7"
+serializationPluginVers="2.0.21"
+serializationLibVers= "1.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,18 +44,21 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 converter_retrofit={group="com.squareup.retrofit2", name="converter-gson", version.ref = "retrofitVers" }
-retrofit={group="com.squareup.retrofit2",name="retrofit",version.ref = "retrofitVers" }
+retrofit={group="com.squareup.retrofit2",name="retrofit", version = "2.11.0" }
 logging-interceptor={group="com.squareup.okhttp3",name="logging-interceptor",version.ref="okhttp3Vers"}
 okhttp3={group="com.squareup.okhttp3",name="okhttp",version.ref="okhttp3Vers"}
 gson = "com.google.code.gson:gson:2.12.1"
-hiltAndroid = { group = "com.google.dagger", name = "hilt-android" ,version.ref = "daggerHiltVers"}
-hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler" ,version.ref = "daggerHiltVers"}
+hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version = "2.55" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler" ,version.ref = "daggerHiltVers" }
 hiltNavigation={ group = "androidx.hilt", name="hilt-navigation-fragment", version.ref="hiltNavVers"}
 glide={group="com.github.bumptech.glide", name="glide",version.ref="glideVers"}
 androidx-recyclerview={group="androidx.recyclerview", name="recyclerview", version.ref="recycledViewVers"}
 androidx-paging={group="androidx.paging",name="paging-runtime", version.ref="pagingLibVers"}
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+kotlinx-serialization={group="org.jetbrains.kotlinx", name="kotlinx-serialization-json",version.ref="serializationLibVers"}
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -61,4 +66,5 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspVers" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltVers" }
+kotlin-serialization={id="org.jetbrains.kotlin.plugin.serialization", version.ref="serializationPluginVers"}
 

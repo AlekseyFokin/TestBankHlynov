@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import dagger.hilt.android.AndroidEntryPoint
-import org.sniffsnirr.testbankhlynov.R
 import org.sniffsnirr.testbankhlynov.databinding.ActivityMainBinding
-import org.sniffsnirr.testbankhlynov.presentation.ui.main.MainFragment
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

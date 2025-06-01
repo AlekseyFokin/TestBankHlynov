@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/color_pressed">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:endColor="@color/gradient1_start"
+                android:startColor="@color/gradient1_end"
+                android:type="linear" />
+            <corners android:radius="@dimen/corner_radius" />
+        </shape>
+    </item>
+</ripple>
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:state_pressed="true">
-    <shape android:shape="rectangle">
-        <solid android:color="@color/color_pressed" />
-        <corners android:radius="@dimen/corner_radius" />
-    </shape>
-</item>
-<item>
-    <shape android:shape="rectangle">
-        <gradient
-            android:angle="0"
-            android:endColor="@color/gradient1_start"
-            android:startColor="@color/gradient1_end"
-            android:type="linear" />
-        <corners android:radius="@dimen/corner_radius" />
-    </shape>
-</item>
-</selector>
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--<item android:state_pressed="true">-->
+<!--    <shape android:shape="rectangle">-->
+<!--        <solid android:color="@color/color_pressed" />-->
+<!--        <corners android:radius="@dimen/corner_radius" />-->
+<!--    </shape>-->
+<!--</item>-->
+<!--<item>-->
+<!--    <shape android:shape="rectangle">-->
+<!--        <gradient-->
+<!--            android:angle="0"-->
+<!--            android:endColor="@color/gradient1_start"-->
+<!--            android:startColor="@color/gradient1_end"-->
+<!--            android:type="linear" />-->
+<!--        <corners android:radius="@dimen/corner_radius" />-->
+<!--    </shape>-->
+<!--</item>-->
+<!--</selector>-->
+
 
 
 <!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->

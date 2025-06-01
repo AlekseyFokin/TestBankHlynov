@@ -4,7 +4,6 @@
     android:layout_height="1dp"
     android:layout_marginTop="@dimen/spacer_margin"
     android:layout_marginBottom="@dimen/spacer_margin"
-    android:layout_marginStart="@dimen/padding_large_36"
-    android:layout_marginEnd="@dimen/padding_large_36"
+
     android:background="@drawable/gradient_1"
     xmlns:android="http://schemas.android.com/apk/res/android" />

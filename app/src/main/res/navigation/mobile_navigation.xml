@@ -7,5 +7,20 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="org.sniffsnirr.testbankhlynov.presentation.ui.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_biographyFragment"
+            app:destination="@id/biographyFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_tracksFragment"
+            app:destination="@id/tracksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/biographyFragment"
+        android:name="org.sniffsnirr.testbankhlynov.presentation.ui.BiographyFragment"
+        android:label="BiographyFragment" />
+    <fragment
+        android:id="@+id/tracksFragment"
+        android:name="org.sniffsnirr.testbankhlynov.presentation.ui.TracksFragment"
+        android:label="TracksFragment" />
 </navigation>

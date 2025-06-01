@@ -10,6 +10,9 @@
     <color name="description_text">#7B7B7B</color>
     <color name="button_label_text">#303030</color>
 
+    <color name="track_rv_item_text">#6D6D6D</color>
 
-    <color name="color_pressed">#787272</color>
+    <color name="color_pressed">#80787272</color>
+
+
 </resources>

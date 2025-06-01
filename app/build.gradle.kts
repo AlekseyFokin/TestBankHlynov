@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -64,6 +65,7 @@ dependencies {
     implementation(libs.gson)
     implementation (libs.hiltAndroid)
     implementation(libs.hiltNavigation)
+    implementation(libs.kotlinx.serialization)
 
     ksp (libs.hiltCompiler)
 

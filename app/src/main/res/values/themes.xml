@@ -68,14 +68,22 @@
     </style>
 
     <!--    Текст кнопки назад -->
-    <style name="Artist_text_Roboto_400_16">
+    <style name="Artist_Text_Roboto_400_16">
         <item name="fontFamily">@font/roboto_variable_font</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textFontWeight">400</item>
         <item name="android:textColor">@color/black</item>
     </style>
-<!--    <item name="android:textSize">16sp</item>-->
-<!--    <item name="android:lineHeight">29dp</item>-->
+
+
+
+    <!--    Текст recycler_view -->
+    <style name="RV_Text_Roboto_700_19">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">@color/track_rv_item_text</item>
+    </style>
 
     <!--Кнопка с градиентом 1-->
     <style name="ButtonStyle1" parent="Widget.AppCompat.Button.Borderless">

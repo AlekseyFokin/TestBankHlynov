@@ -94,7 +94,7 @@
 
         <TextView
             android:id="@+id/artist_text"
-            style="@style/Artist_text_Roboto_400_16"
+            style="@style/Artist_Text_Roboto_400_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
