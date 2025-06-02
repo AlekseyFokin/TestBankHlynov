@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/track_rv_item_margin"
     android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/item_image"
         android:layout_width="@dimen/track_rv_item_image_size"
         android:layout_height="@dimen/track_rv_item_image_size"
-        android:layout_marginEnd="@dimen/track_rv_item_margin"
+        android:layout_marginEnd="@dimen/track_rv_item_inside_margin"
         android:contentDescription="@string/bsttr_item_image_content_description" />
 
     <TextView

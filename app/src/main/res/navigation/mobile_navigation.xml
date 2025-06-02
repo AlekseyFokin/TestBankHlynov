@@ -10,7 +10,10 @@
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_biographyFragment"
-            app:destination="@id/biographyFragment" />
+            app:destination="@id/biographyFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_tracksFragment"
             app:destination="@id/tracksFragment" />

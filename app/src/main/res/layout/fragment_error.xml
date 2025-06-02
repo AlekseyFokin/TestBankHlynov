@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/error_fragment_height"
+    android:background="@drawable/gradient_2"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_micro"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_micro"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Error_Header_Text_Roboto_700_18"
+                android:text="@string/error_message_header"
+                android:layout_marginBottom="@dimen/margin_medium"
+                />
+            <TextView
+                android:id="@+id/error_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Error_Message_Text_Roboto_400_16"
+                android:text="@string/error_message_header"
+                android:layout_marginBottom="@dimen/margin_medium"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/close_button"
+                style="@style/ButtonStyle2"
+                android:layout_width="@dimen/search_button_width"
+                android:layout_height="wrap_content"
+                android:text="@string/error_button_label"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+
+

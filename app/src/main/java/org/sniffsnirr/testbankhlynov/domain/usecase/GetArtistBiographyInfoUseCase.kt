@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetArtistBiographyInfoUseCase @Inject constructor(
     private val audioscrobberRepository: AudioscrobberRepository
 ) {
-    suspend operator fun invoke(artistName: String): ArtistBiography {
+    suspend operator fun invoke(artistName: String):ArtistBiography {
        return audioscrobberRepository.loadBiography(artistName)
     }
 

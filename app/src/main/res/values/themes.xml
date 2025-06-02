@@ -75,8 +75,6 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
-
-
     <!--    Текст recycler_view -->
     <style name="RV_Text_Roboto_700_19">
         <item name="fontFamily">@font/roboto_variable_font</item>
@@ -84,6 +82,24 @@
         <item name="android:textFontWeight">700</item>
         <item name="android:textColor">@color/track_rv_item_text</item>
     </style>
+
+
+    <!-- Заголовок ошибки -->
+    <style name="Error_Header_Text_Roboto_700_18">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Сообщение ошибки -->
+    <style name="Error_Message_Text_Roboto_400_16">
+        <item name="fontFamily">@font/roboto_variable_font</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
     <!--Кнопка с градиентом 1-->
     <style name="ButtonStyle1" parent="Widget.AppCompat.Button.Borderless">
@@ -93,7 +109,6 @@
         <item name="android:textAppearance">@style/Button_Roboto_400_16</item>
         <item name="android:paddingTop">@dimen/padding_medium</item>
         <item name="android:paddingBottom">@dimen/padding_medium</item>
-
         <item name="android:lineSpacingExtra">19dp</item>
     </style>
 <!--    <item name="android:lineHeight">@dimen/button_line_height</item>-->

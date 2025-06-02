@@ -1,7 +1,7 @@
 package org.sniffsnirr.testbankhlynov.domain.entity
 
 data class ArtistBiography(
-    val name: String,
-    val imageUrl: String,
-    val summary: String
+    val name: String?=null,
+    val imageUrl: String?=null,
+    val summary: String?=null
 )

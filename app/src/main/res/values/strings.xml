@@ -23,5 +23,8 @@
     <string name="bsttr_back_button_label"><u>Вернуться назад</u></string>
     <string name="bsttr_item_image_content_description">название трека</string>
 
+    <!--Сообщение об ошибке-->
+    <string name="error_message_header">В приложении ошибка</string>
+    <string name="error_button_label">Закрыть</string>
 
 </resources>

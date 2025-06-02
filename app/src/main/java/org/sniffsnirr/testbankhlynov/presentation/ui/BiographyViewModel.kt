@@ -27,6 +27,11 @@ class BiographyViewModel @Inject constructor(private val getArtistBiographyInfoU
     private val _artistBiographyInfo = MutableStateFlow<ArtistBiography?>(null)
     val artistBiographyInfo = _artistBiographyInfo.asStateFlow()
 
+    private val _searchStringState = MutableStateFlow<String>("")
+    val searchStringState = _searchStringState.asStateFlow()
+
+
+
     fun getArtistBoigraphy(artistName:String) {
         viewModelScope.launch(Dispatchers.IO) {// Запуск загрузки всего контента
             kotlin.runCatching {
@@ -35,12 +40,20 @@ class BiographyViewModel @Inject constructor(private val getArtistBiographyInfoU
             }.fold(
                 onSuccess = { _artistBiographyInfo.value = it },
                 onFailure = { Log.d("Error", "Загрузка биографии : ${it.message}")
+                    if (it.message!!.contains("null object reference")){
+                        _artistBiographyInfo.value= ArtistBiography()
+                    }
+                    else{
                     _isLoading.value = false
                     _error.send(it.message?:"")  // показывать диалог с ошибкой - где onFailure
+                    }
                 }
             )
             _isLoading.value = false
         }
+    }
 
+    fun changeSearchString(newSearchString:String){
+        _searchStringState.value=newSearchString
     }
 }
