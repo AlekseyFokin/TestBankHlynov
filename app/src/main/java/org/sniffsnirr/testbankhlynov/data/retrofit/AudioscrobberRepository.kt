@@ -1,11 +1,9 @@
 package org.sniffsnirr.testbankhlynov.data.retrofit
 
-import RootResponseArtistBiography
 import org.sniffsnirr.testbankhlynov.domain.entity.ArtistBiography
 import org.sniffsnirr.testbankhlynov.domain.entity.ArtistTopTrack
 import org.sniffsnirr.testbankhlynov.util.toArtistBiography
 import org.sniffsnirr.testbankhlynov.util.toArtistTopTracks
-import retrofit2.Response
 import javax.inject.Inject
 
 class AudioscrobberRepository @Inject constructor(
@@ -16,6 +14,6 @@ class AudioscrobberRepository @Inject constructor(
     }
 
     suspend fun loadTopTracks(artistName: String): List<ArtistTopTrack> {
-      return audioscrobblerApi.getArtistTopTracks(artist = artistName).toArtistTopTracks()
+        return audioscrobblerApi.getArtistTopTracks(artist = artistName).toArtistTopTracks()
     }
 }

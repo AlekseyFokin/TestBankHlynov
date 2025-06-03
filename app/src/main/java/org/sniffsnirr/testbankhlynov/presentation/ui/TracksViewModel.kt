@@ -1,6 +1,5 @@
 package org.sniffsnirr.testbankhlynov.presentation.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -10,7 +9,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
-import org.sniffsnirr.testbankhlynov.domain.entity.ArtistBiography
 import org.sniffsnirr.testbankhlynov.domain.entity.ArtistTopTrack
 import org.sniffsnirr.testbankhlynov.domain.usecase.GetArtistTopTrackListUseCase
 import javax.inject.Inject
@@ -31,20 +29,22 @@ class TracksViewModel @Inject constructor(private val getArtistTopTracksListUseC
     private val _searchStringState = MutableStateFlow<String>("")
     val searchStringState = _searchStringState.asStateFlow()
 
-    fun getArtistBoigraphy(artistName:String) {
+    fun getArtistBoigraphy(artistName: String) {
         viewModelScope.launch(Dispatchers.IO) {// Запуск загрузки всего контента
             kotlin.runCatching {
                 _isLoading.value = true
                 getArtistTopTracksListUseCase(artistName)
             }.fold(
                 onSuccess = { _artistTopTracks.value = it },
-                onFailure = { Log.d("Error", "Загрузка биографии : ${it.message}")
-                    if (it.message!!.contains("null object reference")){
-                        //_artistTopTracks.value= ArtistBiography()
-                    }
-                    else{
+                onFailure = {
+
+                    if (it.message!!.contains(NO_DATA_SIGN)) {
+                        _artistTopTracks.value = listOf<ArtistTopTrack>()
+                    } else {
                         _isLoading.value = false
-                        _error.send(it.message?:"")  // показывать диалог с ошибкой - где onFailure
+                        _error.send(
+                            it.message ?: ""
+                        )  // показывать диалог с ошибкой - где onFailure
                     }
                 }
             )
@@ -52,7 +52,11 @@ class TracksViewModel @Inject constructor(private val getArtistTopTracksListUseC
         }
     }
 
-    fun changeSearchString(newSearchString:String){
-        _searchStringState.value=newSearchString
+    fun changeSearchString(newSearchString: String) {
+        _searchStringState.value = newSearchString
+    }
+
+    companion object{
+        const val NO_DATA_SIGN="null object reference"
     }
 }

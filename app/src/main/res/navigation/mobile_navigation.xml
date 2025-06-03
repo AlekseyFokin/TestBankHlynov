@@ -16,7 +16,9 @@
             app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_tracksFragment"
-            app:destination="@id/tracksFragment" />
+            app:destination="@id/tracksFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
     </fragment>
     <fragment
         android:id="@+id/biographyFragment"

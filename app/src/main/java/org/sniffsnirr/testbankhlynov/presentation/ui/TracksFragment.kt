@@ -57,8 +57,8 @@ class TracksFragment : Fragment() {
 
             trackRv.setHasFixedSize(true)
             trackRv.layoutManager =
-                LinearLayoutManager(requireContext(),  GridLayoutManager.VERTICAL, false)
-            atristTopTrackAdapter= ArtistTopTracksAdapter()
+                LinearLayoutManager(requireContext(), GridLayoutManager.VERTICAL, false)
+            atristTopTrackAdapter = ArtistTopTracksAdapter()
             trackRv.adapter = atristTopTrackAdapter
         }
 
@@ -66,10 +66,9 @@ class TracksFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.artistTopTracks.collect {
                     atristTopTrackAdapter.setData(it.toList())
-                    }
                 }
             }
-
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {// прогрессбар загрузки
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {

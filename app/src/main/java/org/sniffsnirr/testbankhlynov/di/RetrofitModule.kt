@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object  RetrofitModule {
+object RetrofitModule {
     private const val BASE_URL = "https://ws.audioscrobbler.com"
 
     @Singleton
@@ -35,6 +35,6 @@ object  RetrofitModule {
 
     @Singleton
     @Provides
-    fun providesOpenExchange(retrofit: Retrofit)=
+    fun providesOpenExchange(retrofit: Retrofit) =
         retrofit.create(AudioscrobblerApi::class.java)
 }

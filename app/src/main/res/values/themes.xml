@@ -1,21 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.TestBankHlynov" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
     <style name="Theme.TestBankHlynov" parent="Base.Theme.TestBankHlynov" />
-
-<!--    <style name="Fragmentstyle">-->
-<!--        <item name="android:background">@color/white</item>-->
-
-<!--&lt;!&ndash;        <item name="android:paddingTop">@dimen/padding_large_top</item>&ndash;&gt;-->
-
-<!--    </style>-->
-<!--    <item name="android:paddingStart">@dimen/padding_large_36</item>-->
-<!--    <item name="android:paddingEnd">@dimen/padding_large_36</item>-->
-<!--    <item name="android:paddingBottom">@dimen/padding_large_bottom</item>-->
 
     <!--    Текст заголовков -->
     <style name="Header_Roboto_700_29">
@@ -83,7 +71,6 @@
         <item name="android:textColor">@color/track_rv_item_text</item>
     </style>
 
-
     <!-- Заголовок ошибки -->
     <style name="Error_Header_Text_Roboto_700_18">
         <item name="fontFamily">@font/roboto_variable_font</item>
@@ -111,13 +98,10 @@
         <item name="android:paddingBottom">@dimen/padding_medium</item>
         <item name="android:lineSpacingExtra">19dp</item>
     </style>
-<!--    <item name="android:lineHeight">@dimen/button_line_height</item>-->
 
     <!--Кнопка с градиентом 2-->
     <style name="ButtonStyle2" parent="ButtonStyle1">
         <item name="android:background">@drawable/button2_shape_with_ripple</item>
     </style>
-
-
 
 </resources>

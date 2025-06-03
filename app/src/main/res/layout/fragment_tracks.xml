@@ -1,124 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:paddingTop="@dimen/margin_large_top"
-        android:paddingBottom="@dimen/margin_large_top">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/search_linear"
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/white"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:paddingTop="@dimen/margin_large_top"
+            android:paddingBottom="@dimen/margin_large_top">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/padding_large_36"
-                android:layout_marginEnd="@dimen/padding_large_36"
-                android:layout_marginBottom="@dimen/margin_medium_bottom"
-                android:text="@string/bsttr_search_header"
-                android:textAppearance="@style/Header_Roboto_700_29" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/search_layout"
+            <LinearLayout
+                android:id="@+id/search_linear"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/search_string_height"
-                android:layout_marginStart="@dimen/padding_large_36"
-                android:layout_marginEnd="@dimen/padding_large_36"
-                android:layout_marginBottom="@dimen/margin_small"
-                app:boxStrokeColor="@color/white"
-                app:boxStrokeWidth="0dp"
-                app:hintTextColor="@color/black"
-                app:placeholderText="@string/bgph_search_placeholder_label"
-                app:placeholderTextAppearance="@style/Searchtext_Roboto_300_12"
-                app:startIconDrawable="@drawable/ic_search_10"
-                app:startIconMinSize="12dp"
-                app:startIconScaleType="fitStart">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/search_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/search_string_field_height"
-                    android:singleLine="true"
-                    android:textAppearance="@style/Searchtext_Roboto_300_12" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <include layout="@layout/spacer_search" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/tracks_search_button"
-                style="@style/ButtonStyle1"
-                android:layout_width="@dimen/search_button_width"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/padding_large_36"
-                android:layout_marginTop="@dimen/search_string_margin"
-                android:layout_marginEnd="@dimen/padding_large_36"
-                android:layout_marginBottom="@dimen/margin_medium_bottom"
-                android:text="@string/bsttr_search_button_label" />
-        </LinearLayout>
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large_36"
+                    android:layout_marginEnd="@dimen/padding_large_36"
+                    android:layout_marginBottom="@dimen/margin_medium_bottom"
+                    android:text="@string/bsttr_search_header"
+                    android:textAppearance="@style/Header_Roboto_700_29" />
 
-            app:layout_constraintBottom_toTopOf="@+id/back_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_linear">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/search_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/search_string_height"
+                    android:layout_marginStart="@dimen/padding_large_36"
+                    android:layout_marginEnd="@dimen/padding_large_36"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    app:boxStrokeColor="@color/white"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="@color/black"
+                    app:placeholderText="@string/bgph_search_placeholder_label"
+                    app:placeholderTextAppearance="@style/Searchtext_Roboto_300_12"
+                    app:startIconDrawable="@drawable/ic_search_10"
+                    app:startIconMinSize="12dp"
+                    app:startIconScaleType="fitStart">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/search_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/search_string_field_height"
+                        android:singleLine="true"
+                        android:textAppearance="@style/Searchtext_Roboto_300_12" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/track_rv"
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <include layout="@layout/spacer_search" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tracks_search_button"
+                    style="@style/ButtonStyle1"
+                    android:layout_width="@dimen/search_button_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/padding_large_36"
+                    android:layout_marginTop="@dimen/search_string_margin"
+                    android:layout_marginEnd="@dimen/padding_large_36"
+                    android:layout_marginBottom="@dimen/margin_medium_bottom"
+                    android:text="@string/bsttr_search_button_label" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintBottom_toTopOf="@+id/back_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/track_rv_item" />
+                app:layout_constraintTop_toBottomOf="@+id/search_linear">
 
 
-        </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/track_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/track_rv_item" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/back_button"
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/back_button_height"
+                android:layout_marginStart="@dimen/padding_large_36"
+                android:layout_marginEnd="@dimen/padding_large_36"
+                android:layout_marginBottom="@dimen/margin_medium_bottom"
+                android:text="@string/bsttr_back_button_label"
+                android:textAppearance="@style/Backtext_Roboto_400_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/back_button_height"
-            android:layout_marginStart="@dimen/padding_large_36"
-            android:layout_marginEnd="@dimen/padding_large_36"
-            android:layout_marginBottom="@dimen/margin_medium_bottom"
-            android:text="@string/bsttr_back_button_label"
-            android:textAppearance="@style/Backtext_Roboto_400_16"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ProgressBar
-        android:id="@+id/progressbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminateDrawable="@drawable/progressbar_gradient"
-        android:visibility="gone" />
-</FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progressbar_gradient"
+            android:visibility="gone" />
+    </FrameLayout>
+</ScrollView>

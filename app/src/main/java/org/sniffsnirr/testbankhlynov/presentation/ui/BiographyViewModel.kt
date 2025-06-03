@@ -1,6 +1,5 @@
 package org.sniffsnirr.testbankhlynov.presentation.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -31,7 +30,6 @@ class BiographyViewModel @Inject constructor(private val getArtistBiographyInfoU
     val searchStringState = _searchStringState.asStateFlow()
 
 
-
     fun getArtistBoigraphy(artistName:String) {
         viewModelScope.launch(Dispatchers.IO) {// Запуск загрузки всего контента
             kotlin.runCatching {
@@ -39,13 +37,13 @@ class BiographyViewModel @Inject constructor(private val getArtistBiographyInfoU
                 getArtistBiographyInfoUseCase(artistName)
             }.fold(
                 onSuccess = { _artistBiographyInfo.value = it },
-                onFailure = { Log.d("Error", "Загрузка биографии : ${it.message}")
-                    if (it.message!!.contains("null object reference")){
+                onFailure = {
+                    if (it.message!!.contains(NO_DATA_SIGN)){ // вариант когда нет данных об артисте
                         _artistBiographyInfo.value= ArtistBiography()
                     }
                     else{
                     _isLoading.value = false
-                    _error.send(it.message?:"")  // показывать диалог с ошибкой - где onFailure
+                    _error.send(it.message?:"")  // показывать диалог с ошибкой
                     }
                 }
             )
@@ -56,4 +54,9 @@ class BiographyViewModel @Inject constructor(private val getArtistBiographyInfoU
     fun changeSearchString(newSearchString:String){
         _searchStringState.value=newSearchString
     }
+
+    companion object{
+        const val NO_DATA_SIGN="null object reference"
+    }
 }
+

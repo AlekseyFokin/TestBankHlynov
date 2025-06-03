@@ -16,7 +16,7 @@ fun RootResponseArtistBiography.toArtistBiography():ArtistBiography {
     fun RootResponseArtistTopTracks.toArtistTopTracks():List<ArtistTopTrack>{
         val list = mutableListOf<ArtistTopTrack>()
         this.toptracks.track.map{track->
-            list.add(ArtistTopTrack(track.name,track.image.get(1).text))
+            list.add(ArtistTopTrack(track.name, track.image[1].text))
         }
      return   list
     }

@@ -1,5 +1,6 @@
 package org.sniffsnirr.testbankhlynov.presentation.ui.trackrv
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class ArtistTopTracksAdapter(
 
     private var artistTopTrackList: List<ArtistTopTrack> = emptyList()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(list: List<ArtistTopTrack>) {
         artistTopTrackList = list
         notifyDataSetChanged()
@@ -38,7 +40,7 @@ class ArtistTopTracksAdapter(
         val track = artistTopTrackList.getOrNull(position)
         track?.let {
             with(holder.binding) {
-                itemText.setText(track.name)
+                itemText.text = track.name
                 Glide
                     .with(itemImage.context)
                     .load(track.imageUrl)

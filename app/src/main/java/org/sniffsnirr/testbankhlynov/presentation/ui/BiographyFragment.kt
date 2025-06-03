@@ -13,7 +13,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
 import org.sniffsnirr.testbankhlynov.R
 import org.sniffsnirr.testbankhlynov.databinding.FragmentBiographyBinding
@@ -42,14 +41,10 @@ class BiographyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-
             searchText.requestFocus()
-            //  contentLayout.visibility = View.GONE
-            //  photo.visibility = View.GONE
 
             backButton.setOnClickListener {
                 findNavController().popBackStack(R.id.mainFragment, false)
-                // findNavController().navigate(R.id.action_biographyFragment_to_mainFragment)
             }
 
             biographySearchButton.setOnClickListener {
@@ -86,20 +81,20 @@ class BiographyFragment : Fragment() {
                     viewModel.artistBiographyInfo.collect {
                         with(binding) {
                             if (it != null) {
-                                Log.d("Artist", it.toString())
                                 contentLayout.visibility = View.VISIBLE
                                 photo.visibility = View.VISIBLE
-
-                                artistHeader.text = it.name ?: "нет данных"
-                                //artistText.text = textTruncation(it.summary)
+                                    // обработка различных ответов сервера - по факту это нет данных
+                                artistHeader.text = it.name ?: NO_DATA
                                 ((it.summary == null) || (it.imageUrl == ""))
-                                if ( (it.summary == null) || (it.imageUrl == "") || (it.summary.contains("+noredirect"))
-                                ) {
-                                    currentArtistText = "нет данных"
-                                } else {
-                                    currentArtistText =
+                                currentArtistText =
+                                    if ((it.summary == null) || (it.imageUrl == "") || (it.summary.contains(
+                                            NO_DATA_SIGN
+                                        ))
+                                    ) {
+                                        NO_DATA
+                                    } else {
                                         it.summary.substring(0, it.summary.lastIndexOf(". "))
-                                }
+                                    }
                                 textTruncation(currentArtistText)
                                 super.onViewCreated(view, savedInstanceState)
                                 Glide
@@ -119,8 +114,6 @@ class BiographyFragment : Fragment() {
                         with(binding) {
                             if (it) {
                                 progressbar.visibility = View.VISIBLE
-                                //         contentLayout.visibility = View.GONE
-                                //         photo.visibility = View.GONE
                             } else {
                                 progressbar.visibility = View.GONE
                             }
@@ -167,5 +160,7 @@ class BiographyFragment : Fragment() {
 
     companion object {
         const val MAX_LENGTH = 150
+        const val NO_DATA="нет данных"
+        const val NO_DATA_SIGN="+noredirect"
     }
 }

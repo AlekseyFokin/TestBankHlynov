@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content">
 
-          <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -38,7 +37,6 @@
                     android:text="@string/bgph_search_header"
                     android:textAppearance="@style/Header_Roboto_700_29" />
 
-                <!--            android:layout_height="@dimen/search_string_height"-->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/search_layout"
                     android:layout_width="match_parent"
@@ -62,10 +60,7 @@
                         android:singleLine="true"
                         android:textAppearance="@style/Searchtext_Roboto_300_12" />
 
-
                 </com.google.android.material.textfield.TextInputLayout>
-
-                <!--            -->
 
                 <include layout="@layout/spacer_search" />
 
@@ -96,16 +91,14 @@
 
                 <ImageView
                     android:id="@+id/photo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/margin_medium"
                     android:adjustViewBounds="true"
                     android:contentDescription="@string/content_description_artist_image"
                     android:maxHeight="150dp"
-                    android:scaleType="centerCrop"
-
-                    />
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:id="@+id/artist_header"
@@ -136,10 +129,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
 
         <ProgressBar
             android:id="@+id/progressbar"
@@ -149,6 +139,5 @@
             android:indeterminateDrawable="@drawable/progressbar_gradient"
             android:visibility="gone" />
 
-
-
-</FrameLayout>
+    </FrameLayout>
+</ScrollView>
