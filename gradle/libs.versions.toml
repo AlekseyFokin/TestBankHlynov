@@ -21,11 +21,7 @@ hiltNavVers="1.2.0"
 daggerHiltVers="2.55"
 glideVers="4.16.0"
 recycledViewVers="1.4.0"
-#kotlinParcelazeVers="1.9.0"
-pagingLibVers="3.3.6"
 lifecycleLivedataKtx = "2.9.0"
-legacySupportV4 = "1.0.0"
-#lifecycleProcess = "2.8.7"
 serializationPluginVers="2.0.21"
 serializationLibVers= "1.8.0"
 
@@ -53,11 +49,8 @@ hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler" ,ve
 hiltNavigation={ group = "androidx.hilt", name="hilt-navigation-fragment", version.ref="hiltNavVers"}
 glide={group="com.github.bumptech.glide", name="glide",version.ref="glideVers"}
 androidx-recyclerview={group="androidx.recyclerview", name="recyclerview", version.ref="recycledViewVers"}
-androidx-paging={group="androidx.paging",name="paging-runtime", version.ref="pagingLibVers"}
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
-androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 kotlinx-serialization={group="org.jetbrains.kotlinx", name="kotlinx-serialization-json",version.ref="serializationLibVers"}
-
 
 
 [plugins]
